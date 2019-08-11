@@ -8,6 +8,10 @@ import wolframalpha
 import webbrowser
 import smtplib
 import random
+from pygame import mixer
+import playsound
+import numpy
+import cv2
 
 engine = pyttsx3.init('sapi5')
 
@@ -120,20 +124,29 @@ if __name__ == '__main__':
 
 
         elif 'play music' in Input:
-            music_folder = 'C:\\Users\\Public\\Music\\'
-            music = ['Adada-Mazhaida']
-            random_music = music_folder + random.choice(music) + '.mp3'
-            os.system(random_music)
+            # music_folder = 'C:\\Users\\Public\\Music\\'
+            # music = ['Adada-Mazhaida']
+            # random_music = music_folder + random.choice(music) + '.mp3'
+            # os.system(random_music)
+            playsound.playsound('F:\Music\Adada-Mazhaida.mp3', True)
+            # mixer.init()
+            # mixer.music.load('C:/Users/Public/Music/Adada-Mazhaida.mp3')
+            # mixer.music.play()
 
             talk('Okay, here is your music! Enjoy!')
 
         elif 'show images' in Input:
-            images_folder = 'C:\\Users\\Public\\Pictures\\'
-            images_folder = 'C:\\Users\\Admin\\Pictures\\CameraRoll\\'
+            # images_folder = 'C:\\Users\\Public\\Pictures\\'
+            # images_folder = 'C:\\Users\\Admin\\Pictures\\CameraRoll\\'
+            #
+            # images = ['IMG_20180219_170426']
+            # random_images = images_folder + random.choice(images) + '.jpg'
+            # os.system(random_images)
+            img = cv2.imread('D:\Giri\Giri_1.jpg', 0)
+            cv2.imshow('image', img)
+            # cv2.waitkey(0)
+            # cv2.destroyAllWindows()
 
-            images = ['IMG_20180219_170426']
-            random_images = images_folder + random.choice(images) + '.jpg'
-            os.system(random_images)
 
             talk('Okay, here are your images! Have Fun!')
 
